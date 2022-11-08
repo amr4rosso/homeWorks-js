@@ -24,7 +24,7 @@ let currency = '$'
 console.log("salary employee is " + employeeSalary + currency);
 
 
-let xAxis = 45;
-let yAxis = 96;
+let xAxis = Number(45);
+let yAxis = Number(96);
 let cursorCoordinates = "X" + xAxis + " Y" + yAxis;
 console.log("cursor coordinates: " + cursorCoordinates);
