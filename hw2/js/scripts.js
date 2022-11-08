@@ -23,7 +23,8 @@ let employeeSalary = 800;
 let currency = '$'
 console.log("salary employee is " + employeeSalary + currency);
 
-let cursorCoordinates;
+
 let xAxis = 45;
 let yAxis = 96;
-console.log("cursor coordinates: " + "X" + xAxis + " Y" + yAxis);
+let cursorCoordinates = "X" + xAxis + " Y" + yAxis;
+console.log("cursor coordinates: " + cursorCoordinates);
