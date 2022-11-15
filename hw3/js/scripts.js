@@ -9,35 +9,35 @@ const b = 10;
 
 // Addition Operator (+)
 
-console.log("5 + 10 = ", a + b);
+console.log("a + b = ", a + b);
 
 // Subtraction Operator (-)
 
-console.log("5 - 10 = ", a - b);
+console.log("a - b = ", a - b);
 
 // Multiplication Operator (*)
 
-console.log("5 * 10 = ", a * b);
+console.log("a * b = ", a * b);
 
 // Division Operator (/)
 
-console.log("5 / 10 = ", a / b);
+console.log("a / b = ", a / b);
 
 
 // ### 2
 
 true && true        //true
 false || true       //true
-true && 'false'     //true
-0 && 1 || ' ' && 42     //true  
+true && 'false'     //false
+0 && 1 || ' ' && 42     //true  42
 null == undefined       //true
 '' == 0     //true
 1 === '1'       //false
 NaN === NaN && true     //false
 true || false && true || false      //true
 (true || false) && (true || false)      // true
-10 || 0 && 'dog' || ''      //true  
-(10 || 0) && ('dog' || '')      //true  
+10 || 0 && 'dog' || ''      //true  10
+(10 || 0) && ('dog' || '')      //true  dog
 
 
 
