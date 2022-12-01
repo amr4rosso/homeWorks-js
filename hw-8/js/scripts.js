@@ -67,11 +67,11 @@ getDuplicateElement(fruits);
 // TODO  #### Task 3
 
 
-
 const getStrangerNumber = (array) => {
 
-	let count = 0;
 	let N;
+	let unpairedNumbers = [];
+	let pairedNumbers = [];
 
 	if (array.length < 3) {
 
@@ -80,23 +80,52 @@ const getStrangerNumber = (array) => {
 	} else {
 
 		for (let number of array) {
-
 			if (number % 2 == 0){
-				count +=1;
+				pairedNumbers.push(number);
 			}else {
-				N = number;
-			}
-
-			if (number % 2 !== 0) {
-				count += 1;
-			}else {
-				N = number;
-			}
+				unpairedNumbers.push(number);
+			};
 		}
 	}
 
+	if (pairedNumbers.length < unpairedNumbers.length) {
+		N = pairedNumbers[0];
+	} else {
+		N = unpairedNumbers[0];
+	}
+	
 	console.log("Number N =", N);
 }
+
+// const getStrangerNumber = (array) => {
+
+// 	let count = 0;
+// 	let N;
+
+// 	if (array.length < 3) {
+
+// 		console.log('Array length must be more than 3 elements!');
+
+// 	} else {
+
+// 		for (let number of array) {
+
+// 			if (number % 2 == 0){
+// 				count +=1;
+// 			}else {
+// 				N = number;
+// 			}
+
+// 			if (number % 2 !== 0) {
+// 				count += 1;
+// 			}else {
+// 				N = number;
+// 			}
+// 		}
+// 	}
+
+// 	console.log("Number N =", N);
+// }
 
 getStrangerNumber([0, 1]);
 getStrangerNumber([2, 6, 8, 10, 3]);
