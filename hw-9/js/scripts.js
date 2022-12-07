@@ -109,53 +109,165 @@ console.log('listNumber : ', listNumber)
 
 
 
-function ownMap (array, callback) {
+// function ownMap (array, callback) {
 
-	let resultArray = [];
+// 	let resultArray = [];
 
-	for ( let index = 0; index < array.length; index++) {
-		resultArray[index] = callback(array[index], index, array);
+// 	for ( let index = 0; index < array.length; index++) {
+// 		resultArray[index] = callback(array[index], index, array);
+// 	}
+
+// 	return resultArray;
+
+// };
+
+
+const ownMap = (arr, increment) => {
+	let arrClone = [];
+
+	for (let num of arr) {
+		arrClone.push(increment(num));
 	}
-
-	return resultArray;
-
-};
+	return arrClone;
+}
 
 
 console.log("incrementList : ", ownMap(list, increment));
 
-function ownForEach (array, callback) {
 
-	let resultArray = [];
+// function ownForEach (array, callback) {
 
-	for ( let index = 0; index < array.length; index++) {
-		resultArray[index] = callback(array[index], index, array);
+// 	let resultArray = [];
+
+// 	for ( let index = 0; index < array.length; index++) {
+// 		resultArray[index] = callback(array[index], index, array);
+// 	}
+
+// };
+
+const ownForEach = (arr, logger) => {
+	for (let num of arr) {
+		logger(num, arr.indexOf(num, arr))
 	}
-
-};
+}
 
 ownForEach(listNumber, logger);
 
 
 
-function ownFilter (array, callback) {
+// function ownFilter (array, callback) {
 
-	let resultArray = [];
+// 	let resultArray = [];
 
-	for ( let index = 0; index < array.length; index++) {
-		// resultArray[index] = callback(array[index], index, array);
-		if (callback(array[index])) {
-			resultArray.push(array[index]);
-		} 
+// 	for ( let index = 0; index < array.length; index++) {
+// 		// resultArray[index] = callback(array[index], index, array);
+// 		if (callback(array[index])) {
+// 			resultArray.push(array[index]);
+// 		} 
+// 	}
+
+// 	return resultArray;
+
+// };
+
+
+const ownFilter = (arr, isNegative) => {
+
+	let arrClone = [];
+
+	for (let num of arr) {
+		if (isNegative(num) === true) {
+			arrClone.push(num);
+		}
 	}
 
-	return resultArray;
-
+	return arrClone;
 };
 
 let negativeNumberList = ownFilter(listNumber, isNegative);
 
 console.log('negative list numbers : ', negativeNumberList);
+
+
+//?  Task 3
+
+
+
+const data = [
+	{
+	  name: "John",
+	  age: 24,
+	  position: "senior",
+	  isActive: false,
+	},
+	{
+	  name: "Peter",
+	  age: 33,
+	  position: "middle",
+	  isActive: false,
+	},
+	{
+	  name: "Sam",
+	  age: 29,
+	  position: "junior",
+	  isActive: true,
+	},
+	{
+	  name: "Mary",
+	  age: 24,
+	  position: "middle",
+	  isActive: false,
+	},
+	{
+	  name: "Steve",
+	  age: 23,
+	  position: "middle",
+	  isActive: true,
+	},
+	{
+	  name: "Kate",
+	  age: 31,
+	  position: "middle",
+	  isActive: false,
+	},
+	{
+	  name: "Sally",
+	  age: 19,
+	  position: "junior",
+	  isActive: false,
+	},
+	{
+	  name: "Jack",
+	  age: 19,
+	  position: "middle",
+	  isActive: true,
+	},
+  ];
+
+
+// console.log('data : ', data);
+
+
+const filterArrayOfObjects = (array, obj) => {
+
+	let newArray =array.filter(item => {
+
+		return Object.keys(obj).every(key => {
+
+			return item[key] === obj[key];
+		})
+
+	})
+
+	return newArray;
+	
+};
+
+let example = { age: 24, position: "middle", };
+
+let res = filterArrayOfObjects(data, example);
+
+console.log("Array of objects : ", res)
 
 
 
