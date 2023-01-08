@@ -1,43 +1,38 @@
 "use strict";
 
-const slides = document.querySelectorAll('.slide');
 
-slides.forEach((slide, index) => {
-	slide.style.transform = `translate(${index * 100}%)`;
-});
+let slideIndex = 1;
 
-let position = 0;
+function plusSlides(n) {
+	showSlides(slideIndex += n);
+};
 
-let maxPosition = slides.length - 1;
+let prev = document.getElementById("prev-btn");
 
-const nextSlide = document.getElementById("btn-next");
+prev.addEventListener('click', () => {plusSlides(-1)});
 
-nextSlide.addEventListener("click", function() {
+let next = document.getElementById('next-btn');
 
-	if (position === maxPosition) {
-		position = 0;
-	} else {
-		position++;
-	}
+next.addEventListener('click', () => { plusSlides(1)});
+
+
+function showSlides(n) {
 	
+	let slides = document.getElementsByClassName("slide");
 
-	slides.forEach((slide, index) => {
-		slide.style.transform = `translateX(${100 * (index - position)}%)`;
-	});
-});
-
-const prevSlide = document.getElementById("btn-prev");
-
-prevSlide.addEventListener("click", function() {
-
-	if (position === 0) {
-		position = maxPosition;
-	} else {
-		position--;
+	if (n > slides.length) {
+		slideIndex = 1;
 	}
 
-	slides.forEach((slide, index) => {
-		slide.style.transform = `translateX(${100 * (index - position)}%)`;
-	});
+	if (n < 1) {
+		slideIndex = slides.length;
+	}
 
-});
+	for (let i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+
+	slides[slideIndex - 1].style.display = "block";
+};
+
+showSlides(slideIndex);
