@@ -1,19 +1,18 @@
 .button {
-  padding: 16px 16px;
-  font-size: 18px;
-  border: 2px solid black;
-  outline: none;
+  font-size: 20px;
+  padding: 8px;
+  font-weight: 500;
+  border: none;
+  color: #fff;
+  background-color: #000;
   border-radius: 8px;
-  background-color: #fff;
-  font-weight: 700;
+  text-transform: uppercase;
   cursor: pointer;
-  position: relative;
-  min-height: 40px;
 }
 
 .set-btn {
   background-color: green;
-  margin-right: 30px;
+  margin-left: 10px;
 }
 
 #timer {
@@ -21,4 +20,35 @@
   font-size: 50px;
   height: 70px;
   width: 200px;
+}
+
+.container {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  font-family: sans-serif;
+  padding: 32px 16px;
+  border-radius: 16px;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  margin-bottom: 20px;
+}
+
+.input {
+  height: 35px;
+}
+
+.input {
+  height: 35px;
+  display: inline-block;
+  padding: 8px;
+  font-size: 20px;
+  border: none;
+  border: 2px solid black;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.input:focus {
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  outline: none;
 }
