@@ -1,7 +1,7 @@
 "use strict";
 
 
-// ------------ Task 19-2 ------------
+// ------------ Task 19-1 ------------
 
 
 const BASE_URL = 'https://ipapi.co/json/';
